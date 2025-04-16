@@ -3,7 +3,7 @@ package lv1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
 
         // 입력 받은 값을 활용하기 위해 Scanner 사용

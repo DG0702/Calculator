@@ -3,7 +3,6 @@ package lv2;
 public class Calculator {
     
     // 속성 - 필드 (캡슐화)
-
     private int firstNum; // 입력 받을 숫자 1
     private int secondNum; // 입력 받을 숫자 2
     private char operator; // 사칙 연산 기호
@@ -38,25 +37,22 @@ public class Calculator {
 
 
     // 계산하고 출력하는 메서드
-    public void calculator(int firstNum, int secondNum , char operator){
+    public void calculator(){
         // 사칙연산 기호을 입력 받았을 경우
-        switch (operator){
+        switch (this.operator){
             case '+':
-                System.out.println(firstNum + " + " + secondNum + " = " + (firstNum + secondNum) );
+                System.out.println(this.firstNum + " + " + this.secondNum + " = " + (this.firstNum + this.secondNum) );
                 break;
             case '-':
-                System.out.println(firstNum + " - " + secondNum + " = " + (firstNum - secondNum) );
+                System.out.println(this.firstNum + " - " + this.secondNum + " = " + (this.firstNum - this.secondNum) );
                 break;
             case '*':
-                System.out.println(firstNum + " * " + secondNum + " = " + (firstNum * secondNum) );
+                System.out.println(this.firstNum + " * " + this.secondNum + " = " + (this.firstNum * this.secondNum) );
                 break;
             case '/':
-                System.out.println(firstNum + " / " + secondNum + " = " + (firstNum / secondNum) );
+                System.out.println(this.firstNum + " / " + this.secondNum + " = " + (this.firstNum / this.secondNum) );
                 break;
-
         }
-
-
     }
 
 
