@@ -15,6 +15,7 @@ public class Main {
             System.out.print("2번째 숫자를 입력해주세요");
             int secondNum = sc.nextInt();
 
+            // 입력 받은 숫자가 0보다 작을 경우
             if (firstNum < 0 || secondNum < 0) {
                 System.out.println("숫자를 0이상 입력해주세요!!");
                 continue;
@@ -58,6 +59,7 @@ public class Main {
                         continue;
                     }
                 }
+                // 입력 받은 값을 사칙 연산 후
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, exit 외 입력 시 반복)");
                 if("exit".equals(sc.next())){
                     break;
