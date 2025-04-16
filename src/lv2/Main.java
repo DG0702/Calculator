@@ -31,11 +31,14 @@ public class Main {
                         System.out.print("사칙연산 기호를 입력해주세요");
                         char operator = sc.next().charAt(0);
 
-                        if(operator == '/' && secondNum ==0){
+                        // 사칙연산 기호 : 나눗셈, 분모가 0 일 경우
+                        if(operator == '/' && secondNum == 0){
                             System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력 될 수없습니다.");
                             System.out.println("사칙연산 기호를 다시 입력해주세요");
                             continue;
-                        } else if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/')) {
+                        }
+                        // 사칙연산 기호 외에 입력 받았을 경우
+                        else if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/')) {
                             System.out.println("사칙연산 기호를 잘못 입력하셨습니다 다시 입력해주세요");
                         } else {
                             // 사칙연산 메서드 사용
@@ -52,6 +55,7 @@ public class Main {
                     continue;
                 }
             }
+            // 예외 발생 시 (정수 외에 입력 하였을 경우)
             catch (InputMismatchException e){
                 System.out.println("정수를 입력해주세요");
                 sc.nextLine(); // 버퍼 지우기

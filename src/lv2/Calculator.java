@@ -36,6 +36,7 @@ public class Calculator {
         return operator;
     }
 
+
     // 계산하고 출력하는 메서드
     public void calculator(int firstNum, int secondNum , char operator){
         // 사칙연산 기호을 입력 받았을 경우
@@ -45,7 +46,6 @@ public class Calculator {
                 break;
             case '-':
                 System.out.println(firstNum + " - " + secondNum + " = " + (firstNum - secondNum) );
-
                 break;
             case '*':
                 System.out.println(firstNum + " * " + secondNum + " = " + (firstNum * secondNum) );

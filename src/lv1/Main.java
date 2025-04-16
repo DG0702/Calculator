@@ -71,6 +71,7 @@ public class Main {
                 }
 
             }
+            // 예외 발생 시 (정수 외에 입력 하였을 경우)
             catch(InputMismatchException e){
                 System.out.println("정수를 입력해주세요");
                 sc.nextLine(); // 버퍼 지우기
