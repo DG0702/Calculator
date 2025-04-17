@@ -50,6 +50,17 @@ public class App {
                         }
                     }
                 }
+                // 저장된 값 확인
+                calculator.showResult();
+                // 삭제 메서드 사용 유무
+                System.out.println("저장된 값을 삭제 하시겠습니까? (Y/N)");
+                String remove = sc.next();
+                if(remove.equals("Y")){
+                    calculator.removeResult();
+                } else if (remove.equals("N")) {
+                    System.out.println("삭제하지 않습니다");
+                }
+
                 // 입력 받은 값을 사칙 연산 후
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, exit 외 입력 시 반복)");
                 if("exit".equals(sc.next())){

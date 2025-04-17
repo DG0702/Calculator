@@ -75,9 +75,14 @@ public class Calculator {
         }
     }
 
+    // 저장된 값을 가져오는 메서드
+    public void showResult(){
+        System.out.println("저장된 값 : " + getResult());
+    }
+
+
     // 저장된 값들을 제거하는 메서드
     public void removeResult(){
-        System.out.println("저장된 값 : " + getResult());
         result.remove(0);
         System.out.println("삭제 후 저장된 값 : " + getResult());
     }
