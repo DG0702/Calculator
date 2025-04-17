@@ -28,8 +28,7 @@ public class App {
                     System.out.println("숫자를 0이상 입력해주세요!!");
                     continue;
                 }else{
-                    boolean isTrue = true;
-                    while(isTrue){
+                    while(true){
                         // 사칙연산 기호 입력 받기
                         System.out.print("사칙연산 기호를 입력해주세요");
                         char operator = sc.next().charAt(0);
