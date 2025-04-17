@@ -22,12 +22,12 @@ public enum OperatorType {
         return operator;
     }
 
-    // operator 내부값 표현
+    // operator 내부값 표현 -> (+,-,*,/)
     public String toString(){
         return String.valueOf(operator);
     }
 
-    // 입력값 커스텀 메서드 -> op.operator -> + , - , * , /
+    // 입력값 커스텀 메서드 -> op.operator -> (+,-,*,/)
     public static OperatorType getOperatorType(String symbol){
         for(OperatorType op : OperatorType.values()){
             if(op.operator.equals(symbol)){

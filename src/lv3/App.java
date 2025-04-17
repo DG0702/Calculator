@@ -38,9 +38,13 @@ public class App {
                     secondNum = Integer.parseInt(secondInput);
                 }
 
+                // setter
+                arithmeticCalculator.setFirstNum(firstNum);
+                arithmeticCalculator.setSecondNum(secondNum);
+
 
                 // 입력 받은 숫자가 0보다 작을 경우
-                if (firstNum .intValue()< 0 || secondNum.intValue() < 0) {
+                if (firstNum.intValue()< 0 || secondNum.intValue() < 0) {
                     System.out.println("숫자를 0이상 입력해주세요!!");
                     continue;
                 } else if (firstNum.doubleValue() < 0 || secondNum.doubleValue() < 0) {
@@ -75,9 +79,12 @@ public class App {
                             System.out.println("기호를 입력해주세요");
                             sc.nextLine(); // 버퍼 지우기
                         }
-
                     }
                 }
+
+                // 입력값보다 결과값이 큰 경우 조회
+                arithmeticCalculator.showResult();
+
                 // 입력 받은 값을 사칙 연산 후
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, exit 외 입력 시 반복)");
                 if("exit".equals(sc.next())){
