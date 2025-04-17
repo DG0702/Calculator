@@ -1,6 +1,8 @@
 package lv2;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -50,7 +52,7 @@ public class App {
                             System.out.println("사칙연산 기호를 잘못 입력하셨습니다 다시 입력해주세요");
                         } else {
                             // 사칙연산 메서드 사용
-                            calculator.calculator();
+                            calculator.calculator(firstNum,secondNum,operator);
                             break;
                         }
                     }
