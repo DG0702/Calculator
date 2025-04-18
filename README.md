@@ -74,7 +74,26 @@
 
 <br>
 
-### LV 3️⃣ 
+### LV 3️⃣ : Enum, 제네릭, 람다 & 스트림을 이해한 계산기 만들기
+
+#### 🍭 <u> Enum 타입을 활용하여 연산자 타입에 대한 정보를 관리하고 계산기 클래스(ArithmeticCalculator)에 활용  </u>
+
+#### 🍭 <u> 입력 받는 값을 정수가 아닌 실수도 가능하도록 만들기 </u>
+
+- ArithmeticCalculator 클래스의 사칙 연산 계산기 메서드 (calculator)
+
+
+- 단순히 int 타입, double 타입으로 바꾸는 것이 아닌 <span style = "color : #FF7F7F;">제네릭</span>을 활용
+
+
+#### 🍭 <u> 저장된 연산 결과들 중 Scanner로 입력받는 값보다 큰 결과값 들을 출력 </u>
+
+- 조회 메서드 생성 -> 입력값보다 큰 결과값들을 출력하는 메서드
+  - 단 <span style = "color : #FF7F7F;">Lambda & Stream</span> 활용
+
+
+
+
 
 
 ## 🖥️ 개발 프로세스(환경)
