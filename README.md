@@ -1,12 +1,26 @@
-# 🖥  Calculator
+#  📑 Calculator
 
-📗 계산기 프로젝트
+📗 **계산기 프로젝트**
 
-- 이번 과제의 목표 : **<u>자바 문법 실습과 객체 지향 개념의 적용</u>**
- 
+- **이번 과제의 목표 : <u>자바 문법 실습과 객체 지향 개념의 적용</u>**
 
 
-## 프로젝트 가이드
+
+## 🖥️ 개발 프로세스(환경)
+
+
+### ⛏️IDE :
+- `Intellij`
+
+### 📌 Java :
+- **JDK <u style = "color : red;">17버전</u> 사용**
+
+### 🔁 Version Control :
+- `GitHub `
+
+
+
+## ✅ 프로젝트 가이드
 
 
 ### LV 1️⃣ : 클래스 없이 기본적인 연산을 수행 할 수 있는 계산기 만들기
@@ -93,19 +107,54 @@
 
 
 
+## 💠 진행 과정    
+
+### 1. Git 연결 -> 원격 Repository 생성
+
+### 2. Intellij 로컬 Repository -> project 생성 후 -> Git 연결
+
+### 3. test 파일 생성 후 연결 확인
+
+### 4. 프로젝트 진행
 
 
-## 🖥️ 개발 프로세스(환경)
 
 
-### ⛏️IDE : 
-- `Intellij`
+## ✨ 트러블 슈팅
 
-### 📌 Java :
-- **JDK <u style = "color : red;">17버전</u> 사용**
+### 진행 과정 
 
-### 🔁 Version Control :
-- `GitHub `
+- **원격 Repository <-> 로컬 Repository 연결 시 README 파일이 존재할 경우**
+
+
+- **강제 병합 코드: `git pull origin main --allow unrelated-histories` 사용**
+
+
+- **Repository를 서로 <span style = "color : #FF7F7F;">독립적</span>으로 만들었기 때문에 문제 발생**
+
+### LV 1️⃣
+
+- **문제 : 숫자 외에 값을 입력 받았을 경우 오류 발생**
+
+
+- **해결 : try-catch문을 이용하여 예외처리하여 재입력하도록 유도**
+
+
+### LV 2️⃣
+
+- **문제 : 요구사항 파악을 제대로 하지 못해 기능을 잘못 구현함**
+  - **setter,getter 구현 후 main 메서드에서 활용하지 않음** 
+  - **컬렉션 필드 생성과 관련된 메서드를 구현하지 않음** 
+
+
+- **해결 : 여러 번 요구사항을 읽으면서 요구사항 기능을 구현하고 활용**
+  - **setter, getter main 메서드에서 활용**
+  - **컬렉션 필드 생성 후 저장된 값을 확인하는 메서드, 값을 제거하는 메서드 활용**
+
+
+### LV 3️⃣
+
+
 
 
 
