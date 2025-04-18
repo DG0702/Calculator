@@ -52,12 +52,6 @@ public class ArithmeticCalculator <T extends Number>{
         return result;
     }
 
-    // 사칙 연산 기호 가져오기 (enum 통해)
-    OperatorType plus = OperatorType.plus;
-    OperatorType minus = OperatorType.minus;
-    OperatorType mul = OperatorType.mul;
-    OperatorType div = OperatorType.div;
-
 
 
     // 계산 메서드
