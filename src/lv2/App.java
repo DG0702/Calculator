@@ -80,14 +80,6 @@ public class App {
                 System.out.println("정수를 입력해주세요");
                 sc.nextLine(); // 버퍼 지우기
             }
-
         }
-
-
-
-
-
-
-
     }
 }
