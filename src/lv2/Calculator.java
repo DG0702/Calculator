@@ -9,8 +9,8 @@ public class Calculator {
     private List<Integer> allResult  = new ArrayList<>();
 
     // setter - 구현하였지만 사용하지 않아 주석처리
-//    public void setResult(List<Integer> result) {
-//        this.result = result;
+//    public void setResult(List<Integer> allResult) {
+//        this.allResult = allResult;
 //    }
 
     // getter

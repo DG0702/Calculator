@@ -7,41 +7,15 @@ public class ArithmeticCalculator <T extends Number>{
 
 
     // 속성
-//    private T firstNum;
-//    private T secondNum;
-    private OperatorType operator;
     private List<Number> result = new ArrayList<>();
 
 
-    // setter
-//    public void setFirstNum(T firstNum) {
-//        this.firstNum = firstNum;
-//    }
-//
-//    public void setSecondNum(T secondNum) {
-//        this.secondNum = secondNum;
-//    }
-//    public void setOperator(OperatorType operator) {
-//        this.operator = operator;
-//    }
-//
+    // setter - 구현은 하였지만 사용하지 않아 주석처리
 //    public void setResult(List<Number> result){
 //        this.result = result;
 //    }
 
-    // getter
-//    public T getFirstNum() {
-//        return firstNum;
-//    }
-//
-//    public T getSecondNum() {
-//        return secondNum;
-//    }
-//
-//    public OperatorType getOperator() {
-//        return operator;
-//    }
-//
+    // getter - 구현은 하였지만 사용하지 않아 주석처리
 //    public List<Number> getResult(){
 //        return result;
 //    }
@@ -80,12 +54,6 @@ public class ArithmeticCalculator <T extends Number>{
 
     public void doubleCalculate(Double firstNum, Double secondNum, OperatorType operator){
         double resultNum = 0.0;
-        // String a;
-        //if(a == "+"){
-        //    operator = OperatorType.PLUS;
-        // } else if (a ==  "-") {
-        //    operator = OperatorType.MINUS;
-        // }
 
         if(firstNum != null && secondNum != null){
             switch(operator){

@@ -11,8 +11,6 @@ public class App {
 
         // 인스턴스(객체) 생성 -> <제네릭 타입 지정 해줘야 한다>
         ArithmeticCalculator<Number> numberCalculator = new ArithmeticCalculator<>();
-//        ArithmeticCalculator<Integer> intCalculator = new ArithmeticCalculator<>();
-//        ArithmeticCalculator<Double> doubleCalculator = new ArithmeticCalculator<>();
 
 
         double doubleFirstNum ;
