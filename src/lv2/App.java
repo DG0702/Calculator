@@ -1,8 +1,6 @@
 package lv2;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -22,57 +20,54 @@ public class App {
                 System.out.print("2번째 숫자를 입력해주세요");
                 int secondNum = sc.nextInt();
 
-                // setter
-                calculator.setFirstNum(firstNum);
-                calculator.setSecondNum(secondNum);
 
                 // 입력 받은 숫자가 0보다 작을 경우 (getter 활용)
-                if (calculator.getFirstNum() < 0 || calculator.getSecondNum() < 0) {
+                if (firstNum < 0 || secondNum < 0) {
                     System.out.println("숫자를 0이상 입력해주세요!!");
                     continue;
-                }else{
-                    while(true){
-                        // 사칙연산 기호 입력 받기
-                        System.out.print("사칙연산 기호를 입력해주세요");
-                        char operator = sc.next().charAt(0);
-
-                        // setter
-                        calculator.setOperator(operator);
-
-
-                        // 사칙연산 기호 : 나눗셈, 분모가 0 일 경우 (getter 활용)
-                        if(calculator.getOperator() == '/' && calculator.getSecondNum() == 0){
-                            System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력 될 수없습니다.");
-                            System.out.println("사칙연산 기호를 다시 입력해주세요");
-                            continue;
-                        }
-                        // 사칙연산 기호 외에 입력 받았을 경우
-                        else if (!(calculator.getOperator() == '+' || calculator.getOperator() == '-' || calculator.getOperator() == '*' || calculator.getOperator() == '/')) {
-                            System.out.println("사칙연산 기호를 잘못 입력하셨습니다 다시 입력해주세요");
-                        } else {
-                            // 사칙연산 메서드 사용
-                            calculator.calculator(firstNum, secondNum, operator);
-                            break;
-                        }
-                    }
                 }
+
+                char operator;
+
+                while(true){
+                    // 사칙연산 기호 입력 받기
+                    System.out.print("사칙연산 기호를 입력해주세요");
+                    operator = sc.next().charAt(0);
+
+                    // 사칙연산 기호 : 나눗셈, 분모가 0 일 경우 (getter 활용)
+                    if(operator == '/' && secondNum == 0){
+                        System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력 될 수없습니다.");
+                        System.out.println("사칙연산 기호를 다시 입력해주세요");
+                        continue;
+                    }
+                    // 사칙연산 기호 외에 입력 받았을 경우
+                    else if (!(operator == '+' || operator == '-' || operator == '*' || operator == '/')) {
+                        System.out.println("사칙연산 기호를 잘못 입력하셨습니다 다시 입력해주세요");
+                        continue;
+                    }
+                    break;
+                }
+
+                // 사칙연산 메서드 사용 -> 핵심 기능 -> while문 밖에서 수행
+                calculator.calculator(firstNum, secondNum, operator);
+
                 // 저장된 값 확인
                 calculator.showResult();
+
                 // 삭제 메서드 사용 유무
-                System.out.println("저장된 값을 삭제 하시겠습니까? (Y/N)");
+                System.out.println("저장된 값을 삭제 하시겠습니까? (Y 입력 시 삭제)");
                 String remove = sc.next();
                 if(remove.equals("Y")){
                     calculator.removeResult();
-                } else if (remove.equals("N")) {
+                }else{
                     System.out.println("삭제하지 않습니다");
                 }
+
 
                 // 입력 받은 값을 사칙 연산 후
                 System.out.println("더 계산하시겠습니까? (exit 입력 시 종료, exit 외 입력 시 반복)");
                 if("exit".equals(sc.next())){
                     break;
-                }else{
-                    continue;
                 }
             }
             // 예외 발생 시 (정수 외에 입력 하였을 경우)
