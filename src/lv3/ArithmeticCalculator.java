@@ -7,119 +7,128 @@ import java.util.stream.Collectors;
 
 public class ArithmeticCalculator <T extends Number>{
 
-    // 속성
-    private T firstNum;
-    private T secondNum;
-    private OperatorType operator;
-    private List<Number> result ;
 
-    // 생성자
-    public ArithmeticCalculator(){
-        result = new ArrayList<>();
-    }
+    // 속성
+//    private T firstNum;
+//    private T secondNum;
+    private OperatorType operator;
+    private List<Number> result = new ArrayList<>();
+
 
     // setter
-    public void setFirstNum(T firstNum) {
-        this.firstNum = firstNum;
-    }
-
-    public void setSecondNum(T secondNum) {
-        this.secondNum = secondNum;
-    }
-
-    public void setOperator(OperatorType operator) {
-        this.operator = operator;
-    }
-
-    public void setResult(List<Number> result){
-        this.result = result;
-    }
+//    public void setFirstNum(T firstNum) {
+//        this.firstNum = firstNum;
+//    }
+//
+//    public void setSecondNum(T secondNum) {
+//        this.secondNum = secondNum;
+//    }
+//    public void setOperator(OperatorType operator) {
+//        this.operator = operator;
+//    }
+//
+//    public void setResult(List<Number> result){
+//        this.result = result;
+//    }
 
     // getter
-    public T getFirstNum() {
-        return firstNum;
-    }
+//    public T getFirstNum() {
+//        return firstNum;
+//    }
+//
+//    public T getSecondNum() {
+//        return secondNum;
+//    }
+//
+//    public OperatorType getOperator() {
+//        return operator;
+//    }
+//
+//    public List<Number> getResult(){
+//        return result;
+//    }
 
-    public T getSecondNum() {
-        return secondNum;
-    }
 
-    public OperatorType getOperator() {
-        return operator;
-    }
+    public void intCalculate(Integer firstNum, Integer secondNum, OperatorType operator){
+        int resultNum = 0;
 
-    public List<Number> getResult(){
-        return result;
-    }
-
-
-
-    // 계산 메서드
-    public void calculate(T firstNum, T secondNum, OperatorType operator){
-        // 입력 받은 값 2개 모두 정수 일경우
-        if(firstNum instanceof Integer && secondNum instanceof Integer){
+        if(firstNum != null && secondNum != null){
             switch(operator){
-                case plus:
-                    System.out.println(firstNum + " + " + secondNum + " = " + (firstNum.intValue() + secondNum.intValue()));
-                    result.add(firstNum.intValue() + secondNum.intValue());
+                case PLUS:
+                    resultNum = firstNum + secondNum;
+                    result.add(resultNum);
                     break;
-                case minus:
-                    System.out.println(firstNum + " - " + secondNum + " = " + (firstNum.intValue() - secondNum.intValue()));
-                    result.add(firstNum.intValue() - secondNum.intValue());
+                case MINUS:
+                    resultNum = firstNum - secondNum;
+                    result.add(resultNum);
                     break;
-                case mul:
-                    System.out.println(firstNum + " * " + secondNum + " = " + (firstNum.intValue() * secondNum.intValue()));
-                    result.add(firstNum.intValue() * secondNum.intValue());
+                case MUL:
+                    resultNum = firstNum * secondNum;
+                    result.add(resultNum);
                     break;
-                case div:
-                    System.out.println(firstNum + " / " + secondNum + " = " + (firstNum.doubleValue() / secondNum.doubleValue()));
-                    result.add(firstNum.intValue() / secondNum.intValue());
+                case DIV:
+                    resultNum = firstNum / secondNum;
+                    result.add(resultNum);
                     break;
             }
-        } 
-        // 입력 받은 값이 1개는 정수, 1개는 실수 일 때, 모두 실수일 때
-        else {
-            switch(operator){
-                case plus:
-                    System.out.println(firstNum + " + " + secondNum + " = " + (firstNum.doubleValue() + secondNum.doubleValue()));
-                    result.add(firstNum.doubleValue() + secondNum.doubleValue());
-                    break;
-                case minus:
-                    System.out.println(firstNum + " - " + secondNum + " = " + (firstNum.doubleValue() - secondNum.doubleValue()));
-                    result.add(firstNum.doubleValue() - secondNum.doubleValue());
-                    break;
-                case mul:
-                    System.out.println(firstNum + " * " + secondNum + " = " + (firstNum.doubleValue() * secondNum.doubleValue()));
-                    result.add(firstNum.doubleValue() * secondNum.doubleValue());
-                    break;
-                case div:
-                    System.out.println(firstNum + " / " + secondNum + " = " + (firstNum.doubleValue() / secondNum.doubleValue()));
-                    result.add(firstNum.doubleValue() / secondNum.doubleValue());
-                    break;
-            }
+
+            System.out.println(firstNum + " " + operator.getOperator() + " " + secondNum
+                    + " = " + resultNum);
         }
     }
 
+
+
+
+    public void doubleCalculate(Double firstNum, Double secondNum, OperatorType operator){
+        double resultNum = 0.0;
+        // String a;
+        //if(a == "+"){
+        //    operator = OperatorType.PLUS;
+        // } else if (a ==  "-") {
+        //    operator = OperatorType.MINUS;
+        // }
+
+        if(firstNum != null && secondNum != null){
+            switch(operator){
+                case PLUS:
+                    resultNum = firstNum + secondNum;
+                    result.add(resultNum);
+                    break;
+                case MINUS:
+                    resultNum = firstNum - secondNum;
+                    result.add(resultNum);
+                    break;
+                case MUL:
+                    resultNum = firstNum * secondNum;
+                    result.add(resultNum);
+                    break;
+                case DIV:
+                    resultNum = firstNum / secondNum;
+                    result.add(resultNum);
+                    break;
+            }
+
+            System.out.println(firstNum + " " + operator.getOperator() + " " + secondNum
+                    + " = " + resultNum);
+        }
+    }
+
+
+
     // 조회 메서드 -> lambda, stream 사용
-    public void showResult(){
-        System.out.println("저장된 값 : " + getResult());
+    public void showResult(double firstNum, double secondNum){
+        System.out.println("저장된 값 : " + result);
         List<String> showResult = result.stream()
                 // || -> 두 조건 중 하나라도 맞으면 true , && -> 두 조건 모두 만족해야 true
                 // ❗❗ 반대로 생각 할 수 있으므로 주의
-                .filter(result -> result.doubleValue() > firstNum.doubleValue() && result.doubleValue() > secondNum.doubleValue())
-                .map(result -> result.toString())
-                .collect(Collectors.toList());
+                .filter(result -> (result.doubleValue() > firstNum) && (result.doubleValue() > secondNum))
+                .map(Object::toString)
+                .toList();
         System.out.println("입력받은 값보다 큰 결과값: " + showResult);
     }
 
 
 
-
-
-    
-
-
-
-
-
 }
+

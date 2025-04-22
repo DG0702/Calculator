@@ -4,12 +4,11 @@ public enum OperatorType {
     // 상수이름(생성자 매개값 = 할당된 값)
     // 상수 : 변하지 않는 값
     // 정적 멤버 취급(static)
-    plus("+"),
-    minus("-"),
-    mul("*"),
-    div("/");
+    PLUS("+"),
+    MINUS("-"),
+    MUL("*"),
+    DIV("/");
 
-    // [OperatorType.plus, OperatorType.minus, OperatorType.mul, OperatorType.div]
 
     // 속성
     private final String operator;
@@ -24,10 +23,6 @@ public enum OperatorType {
         return operator;
     }
 
-    // toString() 재정의 -> operator 할당된 값 표현 -> (+,-,*,/)
-    public String toString(){
-        return String.valueOf(operator);
-    }
 
     // 입력값 커스텀 메서드 -> OperatorType.values() == op.operator -> (+,-,*,/)
     public static OperatorType getOperatorType(String symbol){
