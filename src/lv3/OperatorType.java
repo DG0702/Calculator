@@ -32,7 +32,7 @@ public enum OperatorType {
             }
         }
         // 오류 발생 시 즉시 종료
-        throw new IllegalArgumentException("지원하지 않는 기호입니다" + symbol);
+         throw new IllegalArgumentException("지원하지 않는 기호입니다" + symbol);
     }
 
 
