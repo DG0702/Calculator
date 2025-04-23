@@ -76,4 +76,7 @@
 
 ![img.png](img.png)
 
- 
+
+## ✨ 트러블 슈팅 정리 , 피드백
+
+- [Velog에서 확인](https://velog.io/@dkzh506/Java-%EA%B3%84%EC%82%B0%EA%B8%B0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8)
