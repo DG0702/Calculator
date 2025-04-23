@@ -74,21 +74,6 @@
 
 ## 📜 디렉토리 구조
 
-CalculatorProject/
-├── .idea/                        # IntelliJ 설정 파일들
-├── out/                          # 컴파일 결과물 (자동 생성됨)
-├── src/                          # 소스 코드 디렉토리
-│   ├── lv1/
-│   │   └── App.java              # 클래스 없이 계산기 구현
-│   ├── lv2/
-│   │   ├── App.java              # 클래스 기반 계산기
-│   │   └── Calculator.java
-│   └── lv3/
-│       ├── App.java              # OOP 적용한 계산기
-│       ├── ArithmeticCalculator.java
-│       └── OperatorType.java
-├── .gitignore                    # Git 추적 제외 파일 목록
-├── CalculatorProject.iml         # IntelliJ 모듈 파일
-└── README.md                     # 프로젝트 설명
+![img.png](img.png)
 
  
