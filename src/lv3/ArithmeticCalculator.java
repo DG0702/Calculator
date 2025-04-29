@@ -7,7 +7,7 @@ public class ArithmeticCalculator <T extends Number>{
 
 
     // 속성
-    private List<Number> result = new ArrayList<>();
+    private List<T> result = new ArrayList<>();
 
 
     // setter - 구현은 하였지만 사용하지 않아 주석처리
@@ -22,28 +22,20 @@ public class ArithmeticCalculator <T extends Number>{
 
 
     public void intCalculate(Integer firstNum, Integer secondNum, OperatorType operator){
-        int resultNum = 0;
+
 
         if(firstNum != null && secondNum != null){
-            switch(operator){
-                case PLUS:
-                    resultNum = firstNum + secondNum;
-                    result.add(resultNum);
-                    break;
-                case MINUS:
-                    resultNum = firstNum - secondNum;
-                    result.add(resultNum);
-                    break;
-                case MUL:
-                    resultNum = firstNum * secondNum;
-                    result.add(resultNum);
-                    break;
-                case DIV:
-                    resultNum = firstNum / secondNum;
-                    result.add(resultNum);
-                    break;
-            }
+            int resultNum = switch(operator){
+                case PLUS -> firstNum + secondNum;
 
+                case MINUS -> firstNum - secondNum;
+
+                case MUL -> firstNum * secondNum;
+
+                case DIV -> firstNum / secondNum;
+            };
+
+            result.add((T)Integer.valueOf(resultNum));
             System.out.println(firstNum + " " + operator.getOperator() + " " + secondNum
                     + " = " + resultNum);
         }
@@ -53,28 +45,16 @@ public class ArithmeticCalculator <T extends Number>{
 
 
     public void doubleCalculate(Double firstNum, Double secondNum, OperatorType operator){
-        double resultNum = 0.0;
 
         if(firstNum != null && secondNum != null){
-            switch(operator){
-                case PLUS:
-                    resultNum = firstNum + secondNum;
-                    result.add(resultNum);
-                    break;
-                case MINUS:
-                    resultNum = firstNum - secondNum;
-                    result.add(resultNum);
-                    break;
-                case MUL:
-                    resultNum = firstNum * secondNum;
-                    result.add(resultNum);
-                    break;
-                case DIV:
-                    resultNum = firstNum / secondNum;
-                    result.add(resultNum);
-                    break;
-            }
+            double resultNum  = switch(operator){
+                case PLUS ->firstNum + secondNum;
+                case MINUS ->firstNum - secondNum;
+                case MUL ->firstNum * secondNum;
+                case DIV -> firstNum / secondNum;
 
+            };
+            result.add((T)Double.valueOf(resultNum));
             System.out.println(firstNum + " " + operator.getOperator() + " " + secondNum
                     + " = " + resultNum);
         }
@@ -88,7 +68,7 @@ public class ArithmeticCalculator <T extends Number>{
         List<String> showResult = result.stream()
                 // || -> 두 조건 중 하나라도 맞으면 true , && -> 두 조건 모두 만족해야 true
                 // ❗❗ 반대로 생각 할 수 있으므로 주의
-                .filter(result -> (result.doubleValue() > firstNum) && (result.doubleValue() > secondNum))
+                .filter(re -> (re.doubleValue() > firstNum) && (re.doubleValue() > secondNum))
                 .map(Object::toString)
                 .toList();
         System.out.println("입력받은 값보다 큰 결과값: " + showResult);
