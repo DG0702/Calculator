@@ -93,11 +93,12 @@ public class App {
                 // String -> OperatorType
                 operator = OperatorType.getOperatorType(strOperator);
 
-                // 사칙연산 기호 : 나눗셈, 분모가 0 일 경우
+                // 사칙연산 기호 정상적인 경우
                 if (!operator.getOperator().equals("/") || doubleSecondNum != 0.0) {
                     break;
                 }
 
+                // 나눗셈, 분모(0)인 경우
                 System.out.println("나눗셈 연산에서 분모(두번째 숫자)에 0이 입력 될 수없습니다.");
                 System.out.println("사칙연산 기호를 다시 입력해주세요");
             }
